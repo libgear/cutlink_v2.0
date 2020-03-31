@@ -1,0 +1,10 @@
+{
+    "scripts": {
+        "start": "node hello.js"
+    },
+    "dependencies": {
+        "ejs-locals": "^1.0.2",
+        "express": "^4.17.1",
+        "request": "^2.88.2"
+    }
+}

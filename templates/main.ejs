@@ -1,0 +1,75 @@
+<%- include ./head %> 
+
+<body>
+
+    <div class="shadow-lg p-3 mb-5 bg-white rounded content" style="z-index:999; display: table;">
+    <form class="form-inline" method="POST" style="max-width: 100%;">     
+        <div class="input-group mb-3" style="max-width: 100%; width: 100%;" >
+            <div class="input-group-prepend" >
+                <div class="input-group-text">
+                    <span style="margin-right: 8px;">Одноразовая</span>  <input name="oneway" type="checkbox" aria-label="Создать одноразовую ссылку?">
+                </div>
+            </div>
+            <input required name="url" type="url" class="form-control" placeholder="Введите URL сайта" aria-label="Введите URL сайта" aria-describedby="button-addon2">
+            <div class="input-group-append">
+                <button class="btn btn-outline-secondary" id="button-addon2" type="submit">Сократить</button>
+            </div>
+        </div>
+    </form>
+    
+    <% if(urlInput != undefined) {%>
+        <% if(canCreate) {%>
+            <h6 class="shortcard"><a href="http://cut.libgear.ru/<%= urlOutput %>"> http://cut.libgear.ru/<%= urlOutput %> </a></h6>
+        <% }else {%>
+            <h6 class="shortcard" style="color: red;">Не так часто!</h6>
+        <%} %>
+    <% }else {%>
+        
+    <%} %>
+
+        <hr>
+
+    <p>
+        Для создания ссылки вы можете воспользоваться API
+      </p>
+        <kbd>
+            > https://cut.libgear.ru/api?url=[url]
+        </kbd>
+      <p>
+        <br>
+        И в ответе вы получите ссылку вот такого образца:
+      </p>
+      <kbd>
+        > https://cut.libgear.ru/atvd4fe
+      </kbd>
+      <p>
+        <br>
+          Это и есть ваша сокращенная ссылка. <br>
+          Так же есть вариант с одноразовой ссылкой. Для этого надо добавить параметр <kbd>dis</kbd>.
+      </p>
+      <kbd>
+        > https://cut.libgear.ru/api?dis=true&url=[url]
+    </kbd>
+    <p><br>
+        С этим параметром ссылка удалится при первом переходе.
+    </p>
+    
+    </div>
+    <div class="area" >
+            <ul class="circles">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+            </ul>
+    </div >
+    <p style="margin: 0; padding: 2 5 2 5; border-top-left-radius: 5px; background-color: rgba(0, 0, 0, 0.226); color: rgba(255, 255, 255, 0.623); bottom: 0; right: 0; position: absolute;">by Shasoleosh and Akych</p>
+</body>
+
+
